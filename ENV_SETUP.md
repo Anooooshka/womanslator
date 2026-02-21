@@ -10,6 +10,8 @@ This app requires the following environment variable to run:
 
 ## Setup
 
+### Local Development
+
 1. Copy `.env.example` to `.env`:
    ```bash
    cp .env.example .env
@@ -20,13 +22,20 @@ This app requires the following environment variable to run:
    GROQ_API_KEY=your_actual_key_here
    ```
 
-3. For local development:
+3. Run the app:
    ```bash
    python app.py
    ```
 
-4. For Vercel deployment:
-   - Go to your Vercel project settings
-   - Add environment variable: `GROQ_API_KEY` with your actual key
+### Vercel Deployment
+
+1. Go to your Vercel project settings
+2. Navigate to **Environment Variables**
+3. Click **Add New**
+4. Set:
+   - **Name**: `GROQ_API_KEY`
+   - **Value**: Your actual Groq API key
+   - **Environment**: Production (or all as needed)
+5. Click **Save** and redeploy
 
 **Note:** Never commit `.env` file - it's in `.gitignore`
