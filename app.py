@@ -2,6 +2,10 @@ from flask import Flask, render_template, request, jsonify
 from groq import Groq
 import os
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
@@ -13,7 +17,7 @@ def get_groq_client():
     if client is None:
         api_key = os.environ.get("GROQ_API_KEY")
         if not api_key:
-            raise ValueError("GROQ_API_KEY environment variable not set. Please add it to your Vercel environment variables.")
+            raise ValueError("GROQ_API_KEY environment variable not set. Please add it to your .env file or Vercel environment variables.")
         client = Groq(api_key=api_key)
     return client
 
