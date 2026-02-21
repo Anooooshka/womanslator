@@ -1,15 +1,17 @@
 from groq import Groq
 import os
 
-# Set your API key from environment variable
-api_key = os.environ.get("GROQ_API_KEY")
-if not api_key:
-    raise ValueError("GROQ_API_KEY environment variable not set")
+# Initialize Groq client lazily
+client = None
 
-os.environ["GROQ_API_KEY"] = api_key
-
-# Create client
-client = Groq()
+def get_groq_client():
+    global client
+    if client is None:
+        api_key = os.environ.get("GROQ_API_KEY")
+        if not api_key:
+            raise ValueError("GROQ_API_KEY environment variable not set")
+        client = Groq(api_key=api_key)
+    return client
 
 # Store conversation history
 messages = [
@@ -37,7 +39,8 @@ while True:
     messages.append({"role": "user", "content": f"My boyfriend said: '{user_input}'. What did he REALLY mean in a romantic way that shows he cares about me?"})
 
     # Get response from Groq
-    response = client.chat.completions.create(
+    groq_client = get_groq_client()
+    response = groq_client.chat.completions.create(
         model="openai/gpt-oss-120b",   # changed model
         messages=messages
     )
