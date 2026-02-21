@@ -69,15 +69,15 @@ http://127.0.0.1:5000
 
 ### 1. Home Page
 
-(Add screenshot here)
+<img width="1881" height="903" alt="image" src="https://github.com/user-attachments/assets/9b3f872a-cab1-4b71-82cf-f992d6824d1c" />
 
 ### 2. Chat in Action
 
-(Add screenshot here)
+<img width="1268" height="833" alt="image" src="https://github.com/user-attachments/assets/bb37506c-a923-4b93-8a24-6e00b267c1c4" />
 
 ### 3. API Response Example
 
-(Add screenshot here)
+<img width="1268" height="833" alt="image" src="https://github.com/user-attachments/assets/fbfa26e3-9caa-421a-ac45-db6145443a61" />
 
 ---
 
@@ -141,9 +141,8 @@ Response → Frontend Display
 
 ## 👩‍💻 Team Members
 
-* Anushkaa
-* (Add additional members if applicable)
-
+* Anushka K Jothish
+* Taniya Thomson
 ---
 
 ---
