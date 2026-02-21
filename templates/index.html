@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 WOMANSLATOR 💕</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>💕 WOMANSLATOR 💕</h1>
+            <p class="subtitle">Understand what your man truly says 💬</p>
+        </header>
+
+        <main class="chat-container">
+            <div class="chat-box" id="chatBox">
+                <div class="welcome-message">
+                    <h2>Welcome! 💋</h2>
+                    <p>Paste what your man said and I'll translate it to what he really means. 💅</p>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="messageInput" 
+                        placeholder="What did he say? 💬"
+                        autocomplete="off"
+                    >
+                    <button id="sendBtn" class="send-btn">Send 💕</button>
+                </div>
+                <button id="clearBtn" class="clear-btn">Clear Chat 🧹</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>For when what he says doesn't match what he means 💞 | Powered by Groq AI</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
