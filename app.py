@@ -2,10 +2,14 @@ from flask import Flask, render_template, request, jsonify
 from groq import Groq
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 
-# Set your API key
-os.environ["GROQ_API_KEY"] = "YOUR_API_KEY_HERE"
+# Set your API key from environment variable
+api_key = os.environ.get("GROQ_API_KEY")
+if not api_key:
+    raise ValueError("GROQ_API_KEY environment variable not set")
+
+os.environ["GROQ_API_KEY"] = api_key
 
 # Create client
 client = Groq()
